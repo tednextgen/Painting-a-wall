@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>              // needed for setprecision() and fixed
+#include <cmath>                // needed for ceil()
+using namespace std;
+
+int main() {
+   /* Type your code here. */
+   double width;
+   double height;
+   double price;
+   cin >> width;
+   cin >> height;
+   cin >> price;
+   double sqFt = width * height;
+   double paint = sqFt / 350;
+   double paintNum = ceil(paint);
+   double cost = price * paintNum;
+   double salesTax = cost * 0.07;
+   double total = cost + salesTax;
+   cout << fixed << setprecision(1) << "Wall area: " << sqFt << " sq ft"<< endl;
+   cout << "Paint needed: " << fixed << setprecision(3) << paint << " gallons" << endl;
+   cout << "Cans needed: " << static_cast<int>(paintNum) << " can(s)" << endl;
+   cout << "Paint cost: $" << fixed << setprecision(2) << cost << endl;
+   cout << "Sales tax: $" << salesTax << endl;
+   cout << "Total cost: $" << total << endl;
+   return 0;
+}
